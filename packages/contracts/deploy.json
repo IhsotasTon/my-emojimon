@@ -1,0 +1,20 @@
+{
+  "components": [
+    "MapConfigComponent",
+    "MovableComponent",
+    "ObstructionComponent",
+    "PlayerComponent",
+    "PositionComponent"
+  ],
+  "initializers": ["MapConfigInitializer"],
+  "systems": [
+    {
+      "name": "MoveSystem",
+      "writeAccess": ["PositionComponent"]
+    },
+    {
+      "name": "JoinGameSystem",
+      "writeAccess": ["MovableComponent", "PlayerComponent", "PositionComponent"]
+    }
+  ]
+}
