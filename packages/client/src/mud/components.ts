@@ -2,10 +2,37 @@ import { overridableComponent, defineComponent, Type } from '@latticexyz/recs';
 import {
   defineCoordComponent,
   defineBoolComponent,
+  defineStringComponent,
+  defineNumberComponent,
 } from '@latticexyz/std-client';
 import { world } from './world';
 
 export const contractComponents = {
+  Counter: defineNumberComponent(world, {
+    metadata: {
+      contractId: 'component.Counter',
+    },
+  }),
+  MonsterType: defineNumberComponent(world, {
+    metadata: {
+      contractId: 'component.MonsterType',
+    },
+  }),
+  OwnedBy: defineStringComponent(world, {
+    metadata: {
+      contractId: 'component.OwnedBy',
+    },
+  }),
+  Encounter: defineStringComponent(world, {
+    metadata: {
+      contractId: 'component.Encounter',
+    },
+  }),
+  EncounterTrigger: defineBoolComponent(world, {
+    metadata: {
+      contractId: 'component.EncounterTrigger',
+    },
+  }),
   MapConfig: defineComponent(
     world,
     {
